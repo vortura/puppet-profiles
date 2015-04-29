@@ -1,3 +1,3 @@
-class 'profiles::ntp::client' {
-    include '::ntp'
+class profiles::ntp::client {
+    include ::ntp
 }
