@@ -1,3 +1,10 @@
 class profiles::ntp::client {
-    include ::ntp
+
+  $servers = hiera('ntp::servers')
+
+  class { '::ntp':
+    servers       => $servers,
+    iburst_enable => true,
+  }
+
 }
