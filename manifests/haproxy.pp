@@ -1,5 +1,7 @@
 class profiles::haproxy {
 
+  include '::haproxy'
+
   $my_haproxy_listeners = hiera('haproxy::listeners', {})
   create_resources('haproxy::listen', $my_haproxy_listeners)
 
